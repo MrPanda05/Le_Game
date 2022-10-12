@@ -192,11 +192,6 @@ def Main():
 
 #Main()
  
-
-def batata():
-    print(23)
-
-    
  
 # #List de numeros de questoes no jogo
 # questionNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]

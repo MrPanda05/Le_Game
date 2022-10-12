@@ -1,0 +1,28 @@
+{
+    "questions": 
+    [
+        {
+            "id": 0,
+            "name": "Eh uma pais da europa",
+            "correct": "Alemanha",
+            "inco":
+            [
+                "Brazil",
+                "Japao",
+                "Palestina"
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Conhece Elon musk?",
+            "correct": "Sim",
+            "inco": 
+            [
+                "Nao",
+                "TOGURO?",
+                "Nao sei"
+            ]
+        }
+    ]
+    
+}
