@@ -1,5 +1,7 @@
 from random import *
 import json
+from time import *
+import os
  
 '''
     Gdd jogo copia do show do milhao
@@ -26,10 +28,10 @@ import json
  
 #Global variables
 letters = ['a', 'b', 'c', 'd']
-specialWords = ['pulo', '50', 'plat', 'plateia', 'uni', 'universitarios', 'parar', 'skip', 'pular', '50|50', 'metade', 'stop', 'para', 'eliminar', 'elemina']
+specialWords = ['pulo', '50', 'plat', 'plateia', 'uni', 'universitarios', 'parar', 'skip', 'pular', '50|50', 'metade', 'stop', 'para', 'eliminar', 'elimina']
 stopWords = ['stop', 'parar', 'para']
 platWords = ['plat', 'plateia']
-cinWords = ['metade', '50', '50|50', 'eliminar', 'elemina']
+cinWords = ['metade', '50', '50|50', 'eliminar', 'elimina']
 uniWords = ['uni', 'universitarios']
 skipWords = ['pular', 'pula', 'skip', 'pulo']
 
@@ -71,56 +73,111 @@ def ChooseCorrect(n):
     num = 0
     for i in inco:
         if(i == correct):
-            print(f"Found correct answer {inco[num]} on index {num} letters {letters[num]}")
+            #print(f"Found correct answer {inco[num]} on index {num} letters {letters[num]}")
             return letters[num], inco
         num += 1
 
 #ChooseCorrect(0)
+
+def printdots():
+    sleep(1)
+    print('.')
+    sleep(1)
+    print('.')
+    sleep(1)
+    print('.')
+    sleep(1)
     
 #Show questions test
-##Arg:answers => the list of answers
-def ShowQuestions(answers, how = 'default'):
+##Arg:answers => the list of answers | rounds => current round | ques => current question
+def ShowQuestions(answers, rounds, ques):
     num = 0
-    print(f"Pergunta numero {num + 1}")
-    if(how == 'default'):
-        for i in answers:
-            print(f"{letters[num]}---{i}\n")
-            num += 1
-    elif(how == 'uni'):
-        print(0)
-    
-
-    
-#Get answer for question
-##Arg: num => question number
-###Todo add special case in show question
-def GetAnswer(num):
-    correct, answers = ChooseCorrect(num)
-    ShowQuestions(answers)
-    isAnswering = True
-    inSpecialCase = False
-    while(isAnswering):
-        userInput = input("Digite sua resposta\n")
-        userInput.lower()
-        if(userInput in specialWords):
-            print("Especial")
-            inSpecialCase = True
-            while(inSpecialCase):
-                ShowQuestions(answers, detectCase(userInput))
-            isAnswering = False
-        elif(userInput in letters):
-            if(userInput == correct):
-                print("Correct")
-                player["Quantidade_de_pontos"] += 100
-                isAnswering = False
-            else:
-                print("Incorreto")
-                player["Quantidade_de_pontos"] -= 100
-                isAnswering = False
+    questionName = data["questions"][ques]["name"]
+    print('______________________________________________')
+    print(f"\tPergunta numero {rounds}")
+    print('______________________________________________')
+    printdots()
+    print(f"\tP{rounds}--{questionName}")
+    print('______________________________________________')
+    for i in answers:
+        print(f"\tQ{num + 1}--{letters[num]}---{i}")
+        sleep(1)
+        print('______________________________________________\n______________________________________________')
+        num += 1
+  
+def fiftyfifty(answers, correct):
+    index = answers.index(correct)
+    print(index)
+    if(index == 0):
+        num = randint(1, 3)
+        print(f"\tQ{1}--{letters[index]}---{correct}")
+        print(f"\tQ{2}--{letters[num]}---{answers[num]}")
+    elif(index == 1):
+        num = choice([i for i in range (0, 3) if i not in [1]])
+        if(num < 1):
+            print(f"\tQ{1}--{letters[num]}---{answers[num]}")
+            print(f"\tQ{2}--{letters[index]}---{correct}")
         else:
-            print("Input invalido")
+            print(f"\tQ{1}--{letters[index]}---{correct}")
+            print(f"\tQ{2}--{letters[num]}---{answers[num]}")
+    elif(index == 2):
+        num = choice([i for i in range (0, 3) if i not in [2]])
+        if(num < 2):
+            print(f"\tQ{1}--{letters[num]}---{answers[num]}")
+            print(f"\tQ{2}--{letters[index]}---{correct}")
+        else:
+            print(f"\tQ{1}--{letters[index]}---{correct}")
+            print(f"\tQ{2}--{letters[num]}---{answers[num]}")
+    else:
+        num = randint(1, 2)
+        print(f"\tQ{1}--{letters[num]}---{answers[num]}")
+        print(f"\tQ{2}--{letters[index]}---{correct}")
 
-    print(1)
+#Faz o calculo da plateia e universitarios
+#todoTranforma em porcentagem dps
+def PlatCalculation(answers, correct, num1, num2, peps):
+    index = answers.index(correct)
+    arr = []
+    arr2 = []
+    ints = 0
+    while(ints < peps):
+        ints += 1
+        num = random()
+        if(num <= num1):
+            arr.append(index)
+        else:
+            num = random()
+            if(num <= num2):
+                arr.append(index)
+            else:
+                arr2.append(choice([i for i in range (0, 3) if i not in [index]]))
+                
+    
+    print(f"arr1 {arr}")
+    print(f"arr2 {arr2}")
+            
+        
+
+
+
+
+#Show diferent question based on special case uni, 50 and plat
+##Arg: answers => the list of answers| how => how it should be shown
+def ShowQuestionVar(answers, how,ques):
+    correct = data["questions"][ques]["correct"]
+    if(how == 'cin'):
+        fiftyfifty(answers, correct)
+    elif(how == 'plat'):
+        PlatCalculation(answers, correct, 0.3, 0.2, 10)
+    elif(how == 'uni'):
+        PlatCalculation(answers, correct, 0.5, 0.1, 5)
+            
+
+
+#print(f"\tQ{num + 1}--{letter}---{correct}")
+#print(f"\tQ{num + 2}--{letters[3]}---{inco}")
+                
+    
 #Detect what special word it is
 def detectCase(word):
     word.lower()
@@ -134,6 +191,91 @@ def detectCase(word):
         return 'plat'
     if(word in cinWords):
         return 'cin'
+    
+#Get answer for question
+##Arg: num => question number | rounds => current round
+###Todo add special case in show question
+def GetAnswer(num, rounds):
+    correct, answers = ChooseCorrect(num)
+    id = data["questions"][num]["id"]
+    ShowQuestions(answers, rounds, num)
+    isAnswering = True
+    inSpecialCase = False
+    while(isAnswering):
+        userInput = input("Digite sua resposta\n").lower()
+        if(userInput in specialWords):
+            print("Especial")
+            caseSpecial = detectCase(userInput)
+            inSpecialCase = True
+            while(inSpecialCase):
+                if(caseSpecial == 'stop'):
+                    inSpecialCase = False
+                    isAnswering = False
+                    return "STOP"
+                elif(caseSpecial == 'skip'):
+                    if(player['Pulos_usados'] == 1):
+                        print("Voce esgotou todos os seus pulos!")
+                        inSpecialCase = False
+                    else:
+                        inSpecialCase = False
+                        isAnswering = False
+                        player['Pulos_usados'] += 1
+                        return "SKIP"
+                elif(caseSpecial == 'cin'):
+                    if(player['50|50_usados'] == 2):
+                        print("Voce gastou todas os seus usos de 50|50!")
+                        inSpecialCase = False
+                    else:
+                        ShowQuestionVar(answers, 'cin', num)
+                        player['50|50_usados'] += 1
+                        inSpecialCase = False
+                elif(caseSpecial == 'plat'):
+                    if(player['Plateias_usadas'] == 99999):
+                        print("Voce gastou todas os seus usos da plateia!")
+                        inSpecialCase = False
+                    else:
+                        ShowQuestionVar(answers, 'plat',num)
+                        player['Plateias_usadas'] += 1
+                        inSpecialCase = False
+                elif(caseSpecial == 'uni'):
+                    if(player['Universitarios_usados'] == 99999):
+                        print("Voce gastou todas os seus usos de universitarios!")
+                        inSpecialCase = False
+                    else:
+                        ShowQuestionVar(answers, 'uni',num)
+                        player['Universitarios_usados'] += 1
+                        inSpecialCase = False
+                #ShowQuestionVar(answers, caseSpecial)
+        elif(userInput in letters):
+            if(userInput == correct):
+                sleep(1)
+                print('.')
+                sleep(1)
+                print('.')
+                sleep(1)
+                print('.')
+                sleep(1)
+                print("Resposta certa!")
+                sleep(1)
+                player["Quantidade_de_pontos"] += 100
+                isAnswering = False
+            else:
+                sleep(1)
+                print('.')
+                sleep(1)
+                print('.')
+                sleep(1)
+                print('.')
+                sleep(1)
+                print("Errou!!")
+                sleep(1)
+                player["Quantidade_de_pontos"] -= 100
+                isAnswering = False
+        else:
+            print("Input invalido")
+
+    #print(1)
+
     
 #Create a random array with n numbers in it
 ##Arg: n => lenght of array
@@ -169,6 +311,7 @@ def SaveResults():
 
  
 def Main():
+    num = 0
     totalQuestion = len(data["questions"])
     gameIsPlaying = False
     listOfQuestions = ArrayGenerator(totalQuestion)
@@ -178,20 +321,34 @@ def Main():
     player["Nome_do_jogador"] = playerNick
     if(playerNick == ""):
         player["Nome_do_jogador"] = "Gamer"
-    num = 0
-    rounds = 0
+    rounds = 1
+    roundPlayed = 0
     while(gameIsPlaying):
-        GetAnswer(listOfQuestions[num])
+        clause = GetAnswer(listOfQuestions[num], rounds)
+        sleep(1)
         rounds += 1
+        roundPlayed += 1
         num += 1
         print(player["Quantidade_de_pontos"])
-        if(rounds >= totalQuestion):
+        if(clause == 'STOP'):
+            print("Voce escolheu parar")
+            break
+        elif(clause == 'SKIP'):
+            print("Voce Pulou a questao")
+        if(roundPlayed >= totalQuestion):
+            print("Acabou!!")
             break
     SaveResults()
    
 
-#Main()
- 
+Main()
+def printtest():
+    anim = [" O\n/|\\\n |\n/ \\", " O\n/|/\n |\n/ \\"]
+    canvas = ""
+    for i in anim:
+        canvas = i
+        print(f"\r{canvas}")
+
  
 # #List de numeros de questoes no jogo
 # questionNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
