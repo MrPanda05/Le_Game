@@ -2,7 +2,7 @@ from random import *
 import json
 from time import *
 import os
- 
+from collections import Counter
 '''
     Gdd jogo copia do show do milhao
  
@@ -133,28 +133,52 @@ def fiftyfifty(answers, correct):
         print(f"\tQ{1}--{letters[num]}---{answers[num]}")
         print(f"\tQ{2}--{letters[index]}---{correct}")
 
+def DoPorcentage(arr1, arr2, how):
+    dic1 = dict(Counter(arr1))
+    dic2 = dict(Counter(arr2))
+    z = {**dic1, **dic2}
+    listed = dict(Counter(z))
+    print(listed)
+    if(how == 'uni'):
+        for i in listed:
+            listed[i] *= 20
+            listed[i] = f"{listed[i]}%"
+    elif(how == 'plat'):
+        for i in listed:
+            listed[i] *= 10
+            listed[i] = f"{listed[i]}%"
+        
+
+    return listed
+        
+
 #Faz o calculo da plateia e universitarios
 #todoTranforma em porcentagem dps
-def PlatCalculation(answers, correct, num1, num2, peps):
+def PlatCalculation(answers, correct, num1, num2, peps, how):
     index = answers.index(correct)
-    arr = []
+    arr1 = []
     arr2 = []
     ints = 0
     while(ints < peps):
         ints += 1
         num = random()
         if(num <= num1):
-            arr.append(index)
+            arr1.append(letters[index])
         else:
             num = random()
             if(num <= num2):
-                arr.append(index)
+                arr1.append(letters[index])
             else:
-                arr2.append(choice([i for i in range (0, 3) if i not in [index]]))
+                arr2.append(letters[choice([i for i in range (0, 4) if i not in [index]])])
                 
     
-    print(f"arr1 {arr}")
+    print(f"arr1 {arr1}")
     print(f"arr2 {arr2}")
+    x = DoPorcentage(arr1, arr2, how)
+    if(how == 'plat'):
+        print(f"A plateia votou nas seguinte questoes {x}")
+    elif(how == 'uni'):
+        print(f"Os universitarios votaram nas seguinte questoes {x}")
             
         
 
@@ -168,9 +192,9 @@ def ShowQuestionVar(answers, how,ques):
     if(how == 'cin'):
         fiftyfifty(answers, correct)
     elif(how == 'plat'):
-        PlatCalculation(answers, correct, 0.3, 0.2, 10)
+        PlatCalculation(answers, correct, 0.3, 0.2, 10, how)
     elif(how == 'uni'):
-        PlatCalculation(answers, correct, 0.5, 0.1, 5)
+        PlatCalculation(answers, correct, 0.5, -5, 5, how)
             
 
 
@@ -230,7 +254,7 @@ def GetAnswer(num, rounds):
                         player['50|50_usados'] += 1
                         inSpecialCase = False
                 elif(caseSpecial == 'plat'):
-                    if(player['Plateias_usadas'] == 99999):
+                    if(player['Plateias_usadas'] == 2):
                         print("Voce gastou todas os seus usos da plateia!")
                         inSpecialCase = False
                     else:
@@ -238,7 +262,7 @@ def GetAnswer(num, rounds):
                         player['Plateias_usadas'] += 1
                         inSpecialCase = False
                 elif(caseSpecial == 'uni'):
-                    if(player['Universitarios_usados'] == 99999):
+                    if(player['Universitarios_usados'] == 2):
                         print("Voce gastou todas os seus usos de universitarios!")
                         inSpecialCase = False
                     else:
