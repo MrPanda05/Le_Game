@@ -248,25 +248,13 @@ def GetAnswer(num, rounds):
                 #ShowQuestionVar(answers, caseSpecial)
         elif(userInput in letters):
             if(userInput == correct):
-                sleep(1)
-                print('.')
-                sleep(1)
-                print('.')
-                sleep(1)
-                print('.')
-                sleep(1)
+                printdots()
                 print("Resposta certa!")
                 sleep(1)
                 player["Quantidade_de_pontos"] += 100
                 isAnswering = False
             else:
-                sleep(1)
-                print('.')
-                sleep(1)
-                print('.')
-                sleep(1)
-                print('.')
-                sleep(1)
+                printdots()
                 print("Errou!!")
                 sleep(1)
                 player["Quantidade_de_pontos"] -= 100
