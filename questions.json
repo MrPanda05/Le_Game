@@ -22,6 +22,18 @@
                 "TOGURO?",
                 "Nao sei"
             ]
+        },
+        {
+            "id": 2,
+            "name": "Qual o pais de origem do sepak takraw",
+            "correct": "Malásia",
+            "inco":
+            [
+                "Russia",
+                "China",
+                "Turquia"
+            ]
+            
         }
     ],
     "Spequestions":
