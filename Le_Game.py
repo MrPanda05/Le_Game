@@ -137,6 +137,8 @@ def ShowQuestions(answers, rounds, ques):
 def fiftyfifty(answers, correct):
     '''
         1-Acha o index da resposta certa na lista de respostas
+        2-Checa qual index que eh
+        2-1-Baseado no index, ele checa em qual ordem se deve printar as respostas, sempre gerando um novo numero inteiro
     '''
     index = answers.index(correct)
     print(index)
@@ -165,12 +167,26 @@ def fiftyfifty(answers, correct):
         print(f"\tQ{1}--{letters[num]}---{answers[num]}")
         print(f"\tQ{2}--{letters[index]}---{correct}")
 
+#!Calcula a porcentagem
+#? O calculo eh difirente baseado no input do jogador
+##Arg: arr1 e arr2 => Lista comuns | how => Como o calcula de porcentagem deve ser feito
+###Retorna A lista de porcentagem de cada elemento
 def DoPorcentage(arr1, arr2, how):
+    '''
+        1-Transforma em dicionario arr1 e arr2
+        2-Conta quantos elementos iguas ha em cada um
+        3-Junta os dois dicionarios
+        4-Conta novamente quantos elementos ha na juncao de ambos
+        5-Baseado no how, define como a porcentagem deve ser feita
+        5-1-Se for universitarios, o valor eh 20
+        5-2-Se for plateia, o valor eh 10
+        6-retorna o Dicionario ja em porcentagem
+    '''
     dic1 = dict(Counter(arr1))
     dic2 = dict(Counter(arr2))
     z = {**dic1, **dic2}
     listed = dict(Counter(z))
-    print(listed)
+    #print(listed)
     if(how == 'uni'):
         for i in listed:
             listed[i] *= 20
@@ -184,9 +200,24 @@ def DoPorcentage(arr1, arr2, how):
     return listed
         
 
-#Faz o calculo da plateia e universitarios
-#todoTranforma em porcentagem dps
+#!Faz o calculo de plateia e universitarios
+#?Originalmente era apenas para plateia
+##Arg: answers => Lista de respostas | correct => correta
+##Arg: num 1 e num2 => numeros que ajudam no calculo
+##Arg: peps: Quantidade de pessoas | how => se eh universitarios ou plateia
 def PlatCalculation(answers, correct, num1, num2, peps, how):
+    '''
+        1-Acha o index da correta
+        2-declara um inteiro que sera usado para o loop
+        3-Enquanto o inteiro for menor que o numero de pessoas
+        3-1- adciona 1 ao inteiro
+        3-2-Gera um numero entre 0 e 1
+        3.3- Se o rng for menor que num1, adciona a letra da correta em uma lista
+        3.4-Se nao, repete o passo 3.3, mas agora com num2, se nao adciona a letra errada no arr2
+        3-5-repete ate que o inteiro for maior ou igual ao numero de pessoas
+        4-Calcula a porcentagem, usando a funcao anterior
+        5-printa baseado no how
+    '''
     index = answers.index(correct)
     arr1 = []
     arr2 = []
@@ -204,8 +235,8 @@ def PlatCalculation(answers, correct, num1, num2, peps, how):
                 arr2.append(letters[choice([i for i in range (0, 4) if i not in [index]])])
                 
     
-    print(f"arr1 {arr1}")
-    print(f"arr2 {arr2}")
+    #print(f"arr1 {arr1}")
+    #print(f"arr2 {arr2}")
     x = DoPorcentage(arr1, arr2, how)
     if(how == 'plat'):
         print(f"A plateia votou nas seguinte questoes {x}")
@@ -217,8 +248,8 @@ def PlatCalculation(answers, correct, num1, num2, peps, how):
 
 
 
-#Show diferent question based on special case uni, 50 and plat
-##Arg: answers => the list of answers| how => how it should be shown
+#!Mostra as perguntas baseadas no powerups utilizado
+##Arg: answers => lista de respostas| how => Como se deve mostrar | ques => atual questao
 def ShowQuestionVar(answers, how,ques):
     correct = data["questions"][ques]["correct"]
     if(how == 'cin'):
@@ -230,11 +261,7 @@ def ShowQuestionVar(answers, how,ques):
             
 
 
-#print(f"\tQ{num + 1}--{letter}---{correct}")
-#print(f"\tQ{num + 2}--{letters[3]}---{inco}")
-                
-    
-#Detect what special word it is
+#!Acha qual powerup foi usado
 def detectCase(word):
     word.lower()
     if(word in skipWords):
@@ -248,10 +275,13 @@ def detectCase(word):
     if(word in cinWords):
         return 'cin'
     
-#Get answer for question
-##Arg: num => question number | rounds => current round
+#!Recebe o input da questao e checka se esta certa
+##Arg: num => numero da questao | rounds => o round atual
 ###Todo add special case in show question
 def GetAnswer(num, rounds):
+    '''
+        ma nem fudend oque vo explica essa kkkkkkkk
+    '''
     correct, answers = ChooseCorrect(num)
     id = data["questions"][num]["id"]
     ShowQuestions(answers, rounds, num)
@@ -321,8 +351,9 @@ def GetAnswer(num, rounds):
     #print(1)
 
     
-#Create a random array with n numbers in it
-##Arg: n => lenght of array
+#!Cria uma lista com n intens dentro
+##Arg: n => tamanho da lista
+###Retorna a lista
 def ArrayGenerator(n):
     arr = []
     #Loops and adds i to array
@@ -330,8 +361,9 @@ def ArrayGenerator(n):
         arr.append(i)
     return arr
  
-#Shuffles array
-##Arg: arr => array to be shuffle
+#!Embaralha a lista
+##Arg: arr => lista para ser embaralhada
+###Retorna a lista
 def ShuffleArray(arr):
     shuffle(arr)
     return arr
@@ -348,12 +380,12 @@ def SpecialQuestion():
     return oldArr
 
 
-#Creates json file for user score
+#!Salva o score do player em um json
 def SaveResults():
     with open('data.json', 'w') as outfile:
         json.dump(player, outfile, indent=4)
 
- 
+#!O jogo inteiro sera rodado aqui dentro
 def Main():
     num = 0
     totalQuestion = len(data["questions"])
@@ -386,6 +418,8 @@ def Main():
    
 
 Main()
+
+
 def printtest():
     anim = [" O\n/|\\\n |\n/ \\", " O\n/|/\n |\n/ \\"]
     canvas = ""
