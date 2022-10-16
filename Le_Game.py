@@ -59,7 +59,10 @@ data = json.load(file)
 #Leitura do json. data["questions"][n]
 #n eh para qual questao deve ser lida
 #print(data["questions"][0]["inco"][0])
- 
+#sei la
+#sei la
+#sei la 
+
 
 #Selects the correct answer
 ##Arg: n => the question number from json file
