@@ -132,7 +132,12 @@ def ShowQuestions(answers, rounds, ques):
         num += 1
 
 #!Mostra 1 certa e outra errada
+#?Usado quando usuario usa o commando 50|50
+##Arg: answers => Lista de resposta | correct => resposta certa
 def fiftyfifty(answers, correct):
+    '''
+        1-Acha o index da resposta certa na lista de respostas
+    '''
     index = answers.index(correct)
     print(index)
     if(index == 0):
