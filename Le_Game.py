@@ -25,8 +25,18 @@ from collections import Counter
     7.1- Manual de usuario, como jogar o jogo, suas regras e tal
     7.2- Manual de api, oque cada funcao, codigo faz
 '''
- 
-#Global variables
+'''
+    Leitura de comentarios Guia!
+    #!Descricao rapida
+    ##-Arg descreve os asgumentos de uma funcao
+    ###-oq retorna
+    #?-Descricao mais detalhada
+    As explicacoes de algoritimo da funcao serao dadas em comentarios multilinhas
+'''
+
+#1-Variaveis globais
+#!Variaveis que todo o codigo usa
+#?identificacao de input do usuario
 letters = ['a', 'b', 'c', 'd']
 specialWords = ['pulo', '50', 'plat', 'plateia', 'uni', 'universitarios', 'parar', 'skip', 'pular', '50|50', 'metade', 'stop', 'para', 'eliminar', 'elimina']
 stopWords = ['stop', 'parar', 'para']
@@ -34,7 +44,7 @@ platWords = ['plat', 'plateia']
 cinWords = ['metade', '50', '50|50', 'eliminar', 'elimina']
 uniWords = ['uni', 'universitarios']
 skipWords = ['pular', 'pula', 'skip', 'pulo']
-
+#?Reseta todas as variaveis de powerups usados
 totalJumps = 0
 total50 = 0
 totalUni = 0
@@ -42,7 +52,9 @@ totalPlat = 0
 totalPoints = 0
 playerNick = ""
 
-
+#2-Dicionario do player
+#!Highscore que sera salvo em outro arquivo
+#?Essas informacoes sao usadas no arquivo pra saber se o usuario usou algun powerups, salva os pontos e sera usada para o highscore
 player = {
     "Quantidade_de_pontos": totalPoints,
     "Pulos_usados" : totalJumps,
@@ -52,20 +64,29 @@ player = {
     "Nome_do_jogador": playerNick,
 }
 
+#3-Json
+#!Abre o json com as questoes e o le
 file = open('questions.json')
-
 data = json.load(file)
-
 #Leitura do json. data["questions"][n]
 #n eh para qual questao deve ser lida
 #print(data["questions"][0]["inco"][0])
  
-
-#Selects the correct answer
-##Arg: n => the question number from json file
-### Return the correct letter and answers
+#4-Funcoes
+#!Escolhe uma resposta correta
+##Arg: n => O id da questao do .json
+###Retorna uma letra e uma lista com as respostas toda embaralhadas
 def ChooseCorrect(n):
-    #0:A| 1:B | 2:C | 3:D
+    '''
+        1-Declara uma variavel correta que recebe aa resposta certa do .json baseada em n
+        2-faz a mesma coisa da anterios so que com as incorretas
+        3-junta a resposta certa, com a lista de resposta errada
+        3-1Ex: Certa = [y1]
+        incorretas = [x1,x2,x3]
+        dps => [x1,x2,x3,y1]
+        4-Embaralha a lista toda
+        5-Loppa pela lista, se achar a correta retorna
+    '''
     correct = data["questions"][n]["correct"]
     inco = data["questions"][n]["inco"]
     inco.append(data["questions"][n]["correct"])
@@ -77,8 +98,7 @@ def ChooseCorrect(n):
             return letters[num], inco
         num += 1
 
-#ChooseCorrect(0)
-
+#!Printa 3 pontos em um intervalo de 1 segundo cada
 def printdots():
     sleep(1)
     print('.')
@@ -88,9 +108,15 @@ def printdots():
     print('.')
     sleep(1)
     
-#Show questions test
-##Arg:answers => the list of answers | rounds => current round | ques => current question
+#!Mostra as questoes no terminal
+#?Essa eh a primeira coisa que aparecera quando um nova pergunta for dada
+##Arg:answers => Lista de respostas | rounds => O round atual | ques => A questao atual
 def ShowQuestions(answers, rounds, ques):
+    '''
+        1-Pega o nome da questao
+        2-printa a UI
+        3-Loppa pela lista de resposta e printa cada uma das respostas
+    '''
     num = 0
     questionName = data["questions"][ques]["name"]
     print('______________________________________________')
@@ -104,7 +130,8 @@ def ShowQuestions(answers, rounds, ques):
         sleep(1)
         print('______________________________________________\n______________________________________________')
         num += 1
-  
+
+#!Mostra 1 certa e outra errada
 def fiftyfifty(answers, correct):
     index = answers.index(correct)
     print(index)
