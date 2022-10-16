@@ -34,7 +34,34 @@
                 "Turquia"
             ]
             
+        },
+        {
+            "id": 3,
+            "name": "A África é?",
+            "correct": "Continente",
+            "inco":
+            [
+                "Bairro da cidade de Campo Mourão",
+                "País",
+                "Cidade"
+            ]
+
+        },
+        {
+            "id":4,
+            "name": "Na mitologia, Thor usa como arma um?",
+            "correct": "martelo",
+            "inco":
+            [
+                "IphoneX",
+                "Enxada",
+                "Bacalhau"
+            ]
+
         }
+
+
+
     ],
     "Spequestions":
     [

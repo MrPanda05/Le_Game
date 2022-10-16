@@ -71,11 +71,13 @@ data = json.load(file)
 #Leitura do json. data["questions"][n]
 #n eh para qual questao deve ser lida
 #print(data["questions"][0]["inco"][0])
- 
+
+
 #4-Funcoes
 #!Escolhe uma resposta correta
 ##Arg: n => O id da questao do .json
 ###Retorna uma letra e uma lista com as respostas toda embaralhadas
+
 def ChooseCorrect(n):
     '''
         1-Declara uma variavel correta que recebe aa resposta certa do .json baseada em n
