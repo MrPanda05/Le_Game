@@ -58,7 +58,56 @@
                 "Bacalhau"
             ]
 
+        },
+        {
+            "id":5,
+            "name": "O melhor carro do mundo é?",
+            "correct": "Fuscão preto",
+            "inco":
+            [
+                "Lamborghini",
+                "Supra",
+                "Camaro"
+            ]
+
+        },
+        {
+            "id":6,
+            "name": "Qual era a cor da barba do pirata Barba Negra?",
+            "correct": "Preta",
+            "inco":
+            [
+                "Azul banana",
+                "Branco Dourado",
+                "Magenta"
+            ]
+
+        },
+        {
+            "id":7,
+            "name": "Qual o nome do mascote do Ratinho?",
+            "correct": "Charopinho",
+            "inco":
+            [
+                "Remy",
+                "Roddy",
+                "Smilingüido"
+            ]
+
+        },
+        {
+            "id":8,
+            "name": "O pai do pastor, é filho único do meu pai, o que eu sou do pastor?",
+            "correct": "Pai",
+            "inco":
+            [
+                "Titio Avô(ó)",
+                "Subrinho(a)",
+                "Amante"
+            ]
+
         }
+
 
 
 
