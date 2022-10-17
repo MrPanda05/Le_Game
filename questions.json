@@ -106,7 +106,49 @@
                 "Amante"
             ]
 
+        },
+        {
+            "id":9,
+            "name": "O cantor Tim Maia já",
+            "correct": "Falecido",
+            "inco":
+            [
+                "Vívido",
+                "Só quer amar",
+                "Fico bem à vontade"
+            ]
+
+        },
+        {
+            "id":10,
+            "name": "A raça do Scooby-doo é?",
+            "correct": "Dogue-alemão",
+            "inco":
+            [
+                "Pinscher",
+                "Viralata caramelo",
+                "Fila Brasileiro"
+            ]
+
+        },
+        {
+            "id":11,
+            "name": "Quem é o autor da frase 'Ser ou não ser? Eis a questão'?",
+            "correct": "William Shakespeare",
+            "inco":
+            [
+                "Michelangelo di Lodovico Buonarroti Simoni",
+                "Ludwing Van Beethowen",
+                "Karl Marx"
+            ]
+
+        },
+        {
+            "id":12,
+            "name": "",
+
         }
+
 
 
 
