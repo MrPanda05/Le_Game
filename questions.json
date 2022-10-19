@@ -145,7 +145,38 @@
         },
         {
             "id":12,
-            "name": "",
+            "name": "Qual o maior crime da Humanidade?",
+            "correct": "Calvisse",
+            "inco":
+            [
+                "Corno",
+                "Gado",
+                "Amar de mais a gasosa"
+            ]
+
+        },
+        {
+            "id":13,
+            "name": "O que é o que é? Dois homens estão no deserto. Ambos estão com uma mochila nas costas. A mochila de um está aberta e vazia. A mochila do outro está fechada e guarda alguma coisa. Um dos homens está morto. O que há dentro da mochila fechada?",
+            "correct": "Um paraquedas",
+            "inco":
+            [
+                "Bolinha de golf",
+                "Bolo de fuba",
+                "Banana"
+            ]
+
+        },
+        {
+            "id":14,
+            "name": "O se deve dizer a alguém qua acabou de conhecer?",
+            "correct": "Olá",
+            "inco":
+            [
+                "Em pleno 2022",
+                "Casada?",
+                "Mike Wazowski"
+            ]
 
         }
 
