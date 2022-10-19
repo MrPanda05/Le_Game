@@ -157,7 +157,7 @@
         },
         {
             "id":13,
-            "name": "O que é o que é? Dois homens estão no deserto. Ambos estão com uma mochila nas costas. A mochila de um está aberta e vazia. A mochila do outro está fechada e guarda alguma coisa. Um dos homens está morto. O que há dentro da mochila fechada?",
+            "name": "O que eh o que eh? Dois homens estão no deserto. Ambos estao com uma mochila",
             "correct": "Um paraquedas",
             "inco":
             [
@@ -169,8 +169,8 @@
         },
         {
             "id":14,
-            "name": "O se deve dizer a alguém qua acabou de conhecer?",
-            "correct": "Olá",
+            "name": "O se deve dizer a alguem qua acabou de conhecer?",
+            "correct": "Ola",
             "inco":
             [
                 "Em pleno 2022",
