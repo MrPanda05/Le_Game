@@ -66,7 +66,7 @@ player = {
 
 #3-Json
 #!Abre o json com as questoes e o le
-file = open('questions.json', encoding="utf8")
+file = open('questions.json', encoding="utf8", errors="ignore")
 data = json.load(file)
 #Leitura do json. data["questions"][n]
 #n eh para qual questao deve ser lida
