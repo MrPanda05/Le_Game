@@ -62,6 +62,11 @@ data = json.load(file)
 #sei la
 #sei la
 #sei la 
+#sei la
+#sei la
+#sei la
+#sei la
+
 
 
 #Selects the correct answer
