@@ -52,6 +52,12 @@ totalPlat = 0
 totalPoints = 0
 playerNick = ""
 
+Streaks = {
+    "Posstreak": 0,
+    "Negstreak": 0,
+}
+
+
 #2-Dicionario do player
 #!Highscore que sera salvo em outro arquivo
 #?Essas informacoes sao usadas no arquivo pra saber se o usuario usou algun powerups, salva os pontos e sera usada para o highscore
@@ -276,7 +282,20 @@ def detectCase(word):
         return 'plat'
     if(word in cinWords):
         return 'cin'
+
+#!Calcula pontos
+##Arg: rounds => Round atual | sign => Ganhou o perdeu pontos | streak => quantidades de vezes ganha ou perdida seguidas
+def CalcPoints(rounds, sign, streak):
+    if streak == 0:
+        streak = 1
     
+    formula = round(rounds**2 + 100/2)
+    if sign == '+':
+         return round(formula * streak / 1.7)
+    elif sign == '-':
+        return round(-formula * streak / 1.3) 
+    
+
 #!Recebe o input da questao e checka se esta certa
 ##Arg: num => numero da questao | rounds => o round atual
 ###Todo add special case in show question
@@ -339,13 +358,21 @@ def GetAnswer(num, rounds):
                 printdots()
                 print("Resposta certa!")
                 sleep(1)
-                player["Quantidade_de_pontos"] += 100
+                Streaks['Negstreak'] = 0
+                Streaks['Posstreak'] += 1
+                points = CalcPoints(rounds, '+', Streaks['Posstreak'])
+                print(f"Voce ganheou {points}")
+                player["Quantidade_de_pontos"] += points
                 isAnswering = False
             else:
                 printdots()
                 print("Errou!!")
                 sleep(1)
-                player["Quantidade_de_pontos"] -= 100
+                Streaks['Negstreak'] += 1
+                Streaks['Posstreak'] = 0
+                points = CalcPoints(rounds, '-', Streaks['Negstreak'])
+                print(f"Voce perdeu {points}")
+                player["Quantidade_de_pontos"] += points
                 isAnswering = False
         else:
             print("Input invalido")
@@ -407,7 +434,7 @@ def Main():
         rounds += 1
         roundPlayed += 1
         num += 1
-        print(player["Quantidade_de_pontos"])
+        print(f"Voce tem: {player['Quantidade_de_pontos']} pontos!")
         if(clause == 'STOP'):
             print("Voce escolheu parar")
             break
