@@ -1,5 +1,5 @@
-from random import *
 import json
+from random import *
 from time import *
 import os
 from collections import Counter
@@ -66,11 +66,11 @@ player = {
 
 #3-Json
 #!Abre o json com as questoes e o le
-file = open('questions.json')
+file = open('questions.json', encoding="utf8", errors="ignore")
 data = json.load(file)
 #Leitura do json. data["questions"][n]
 #n eh para qual questao deve ser lida
-#print(data["questions"][0]["inco"][0])
+
 
 
 #4-Funcoes

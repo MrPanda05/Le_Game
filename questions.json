@@ -58,7 +58,129 @@
                 "Bacalhau"
             ]
 
+        },
+        {
+            "id":5,
+            "name": "O melhor carro do mundo é?",
+            "correct": "Fuscão preto",
+            "inco":
+            [
+                "Lamborghini",
+                "Supra",
+                "Camaro"
+            ]
+
+        },
+        {
+            "id":6,
+            "name": "Qual era a cor da barba do pirata Barba Negra?",
+            "correct": "Preta",
+            "inco":
+            [
+                "Azul banana",
+                "Branco Dourado",
+                "Magenta"
+            ]
+
+        },
+        {
+            "id":7,
+            "name": "Qual o nome do mascote do Ratinho?",
+            "correct": "Charopinho",
+            "inco":
+            [
+                "Remy",
+                "Roddy",
+                "Smilingüido"
+            ]
+
+        },
+        {
+            "id":8,
+            "name": "O pai do pastor, é filho único do meu pai, o que eu sou do pastor?",
+            "correct": "Pai",
+            "inco":
+            [
+                "Titio Avô(ó)",
+                "Subrinho(a)",
+                "Amante"
+            ]
+
+        },
+        {
+            "id":9,
+            "name": "O cantor Tim Maia já",
+            "correct": "Falecido",
+            "inco":
+            [
+                "Vívido",
+                "Só quer amar",
+                "Fico bem à vontade"
+            ]
+
+        },
+        {
+            "id":10,
+            "name": "A raça do Scooby-doo é?",
+            "correct": "Dogue-alemão",
+            "inco":
+            [
+                "Pinscher",
+                "Viralata caramelo",
+                "Fila Brasileiro"
+            ]
+
+        },
+        {
+            "id":11,
+            "name": "Quem é o autor da frase 'Ser ou não ser? Eis a questão'?",
+            "correct": "William Shakespeare",
+            "inco":
+            [
+                "Michelangelo di Lodovico Buonarroti Simoni",
+                "Ludwing Van Beethowen",
+                "Karl Marx"
+            ]
+
+        },
+        {
+            "id":12,
+            "name": "Qual o maior crime da Humanidade?",
+            "correct": "Calvisse",
+            "inco":
+            [
+                "Corno",
+                "Gado",
+                "Amar de mais a gasosa"
+            ]
+
+        },
+        {
+            "id":13,
+            "name": "O que eh o que eh? Dois homens estão no deserto. Ambos estao com uma mochila",
+            "correct": "Um paraquedas",
+            "inco":
+            [
+                "Bolinha de golf",
+                "Bolo de fuba",
+                "Banana"
+            ]
+
+        },
+        {
+            "id":14,
+            "name": "O se deve dizer a alguem qua acabou de conhecer?",
+            "correct": "Ola",
+            "inco":
+            [
+                "Em pleno 2022",
+                "Casada?",
+                "Mike Wazowski"
+            ]
+
         }
+
+
 
 
 
