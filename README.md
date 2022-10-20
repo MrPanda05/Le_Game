@@ -2,10 +2,10 @@
 
 
 ## [Site do Jogo do Bacalhau!!](https://jogao-do-bacalhau.netlify.app/)
-## Manual da api esta em [Manual de Codigo/Api](https://jogao-do-bacalhau.netlify.app/manual-de-codigo) ou
+## Manual da api esta em [Manual de Codigo/Api](https://jogao-do-bacalhau.netlify.app/manual-de-codigo) ou [Aqui](https://github.com/MrPanda05/Le_Game/blob/master/Api.md)
 
 
-## Manual de usuarios esta em [Manual de Jogador](https://jogao-do-bacalhau.netlify.app/manual-de-jogador)
+## Manual de usuarios esta em [Manual de Jogador](https://jogao-do-bacalhau.netlify.app/manual-de-jogador) ou [Aqui](https://github.com/MrPanda05/Le_Game/blob/master/User.md)
 
 # Como Jogar!
 
@@ -38,9 +38,11 @@
             ]
         }
 
-## Nome de cada variavel
+## Tabela sobre o template
 
 | Variavel | Tipo | Descricao|
-| --- | --- |
+| --- | --- | --- |
 | id | Inteiro | Id da pergunta |
 | name | String | Nome da pergunta |
+| correct | String | Resposta correta |
+| inco | List(String) | Lista de resposta erradas |
