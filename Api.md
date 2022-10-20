@@ -6,7 +6,7 @@
 
 ```mermaid
 graph TD;
-    Start-->|Reseta variaveis, Define funcoes|((Funcao Main));
+    Start-- Reseta variaveis, Define funcoes -- B((Funcao Main));
     A-->C;
     B-->D;
     C-->D;
