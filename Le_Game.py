@@ -1,30 +1,7 @@
 import json
 from random import *
 from time import *
-import os
 from collections import Counter
-'''
-    Gdd jogo copia do show do milhao
- 
-    Deve ter
-    1- Minimo de 15 perguntas
-    2- Cada pergunta deve ter 4 perguntas, uma sera correta
-    3- A cada pergunta, o jogador deve ter a opçao de escolher
-    uma das opções ou parar
-    4- Dever ter uma forma de pontuação
-    5- Caso escolher parar, a pontuação deverar permanencer a mesma
-    5.1- Caso falhe, a pontuação deve decrescer um pouco
-    5.2- Pode haver mais estrategias de pontuação
-    6- Deverão ter "power ups"
-    6.1- Pulo-pula uma questao, somente usado uma vez
-    6.2- 50|50- remove metade das questoes erradas, somente 2 usos
-    6.3- Plateia- 10 opçoes sorteadas da plateia, cada opçao com 30% de chance
-    de estarcorreta, 2 usos
-    6.4- Universitarios,5 opções sorteadas, cada opçao com 50% de certeza, 2 usos
-    7- Dois manuais
-    7.1- Manual de usuario, como jogar o jogo, suas regras e tal
-    7.2- Manual de api, oque cada funcao, codigo faz
-'''
 '''
     Leitura de comentarios Guia!
     #!Descricao rapida
@@ -106,6 +83,7 @@ def ChooseCorrect(n):
             return letters[num], inco
         num += 1
 
+
 #!Printa 3 pontos em um intervalo de 1 segundo cada
 def printdots():
     sleep(1)
@@ -115,6 +93,7 @@ def printdots():
     sleep(1)
     print('.')
     sleep(1)
+
     
 #!Mostra as questoes no terminal
 #?Essa eh a primeira coisa que aparecera quando um nova pergunta for dada
@@ -138,6 +117,9 @@ def ShowQuestions(answers, rounds, ques):
         sleep(1)
         print('______________________________________________\n______________________________________________')
         num += 1
+
+
+##['Sim', 'Nao', 'TOGURO?', 'Nao sei']
 
 #!Mostra 1 certa e outra errada
 #?Usado quando usuario usa o commando 50|50
@@ -175,6 +157,7 @@ def fiftyfifty(answers, correct):
         print(f"\tQ{1}--{letters[num]}---{answers[num]}")
         print(f"\tQ{2}--{letters[index]}---{correct}")
 
+
 #!Calcula a porcentagem
 #? O calculo eh difirente baseado no input do jogador
 ##Arg: arr1 e arr2 => Lista comuns | how => Como o calcula de porcentagem deve ser feito
@@ -207,7 +190,6 @@ def DoPorcentage(arr1, arr2, how):
 
     return listed
         
-
 #!Faz o calculo de plateia e universitarios
 #?Originalmente era apenas para plateia
 ##Arg: answers => Lista de respostas | correct => correta
@@ -227,8 +209,8 @@ def PlatCalculation(answers, correct, num1, num2, peps, how):
         5-printa baseado no how
     '''
     index = answers.index(correct)
-    arr1 = []
-    arr2 = []
+    arr1 = []## Respostas certas aki
+    arr2 = []## Respostas erradas aki
     ints = 0
     while(ints < peps):
         ints += 1
@@ -446,19 +428,4 @@ def Main():
     SaveResults()
    
 
-Main()
-
-
-def printtest():
-    anim = [" O\n/|\\\n |\n/ \\", " O\n/|/\n |\n/ \\"]
-    canvas = ""
-    for i in anim:
-        canvas = i
-        print(f"\r{canvas}")
-
- 
-# #List de numeros de questoes no jogo
-# questionNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-# #Randomicamente embaralha a lista
-# shuffle(questionNum)
-# print(questionNum)
+#Main()
