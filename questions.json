@@ -157,7 +157,7 @@
         },
         {
             "id":13,
-            "name": "O que eh o que eh? Dois homens estão no deserto. Ambos estao com uma mochila",
+            "name": "Dois homens estão no deserto. Ambos estão com uma mochila nas costas. A mochila de um está aberta e vazia.\n A mochila do outro está fechada e guarda alguma coisa. Um dos homens está morto. O que há dentro da mochila fechada?",
             "correct": "Um paraquedas",
             "inco":
             [
