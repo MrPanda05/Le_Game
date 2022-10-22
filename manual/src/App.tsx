@@ -9,6 +9,7 @@ import Navigation from './components/Navigation';
 import Player from './pages/Player';
 import API from './pages/API';
 import Source from './pages/Source';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/manual-de-codigo' element={<API />} />
         <Route path='/codigo-fonte' element={<Source />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
