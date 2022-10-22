@@ -195,7 +195,7 @@ def DoPorcentage(arr1, arr2, how):
 ##Arg: answers => Lista de respostas | correct => correta
 ##Arg: num 1 e num2 => numeros que ajudam no calculo
 ##Arg: peps: Quantidade de pessoas | how => se eh universitarios ou plateia
-def PlatCalculation(answers, correct, num1, num2, peps, how):
+def PlatCalculation(answers, correct, peps, how, num1, num2 = 0):
     '''
         1-Acha o index da correta
         2-declara um inteiro que sera usado para o loop
@@ -233,9 +233,6 @@ def PlatCalculation(answers, correct, num1, num2, peps, how):
     elif(how == 'uni'):
         print(f"Os universitarios votaram nas seguinte questoes {x}")
             
-        
-
-
 
 
 #!Mostra as perguntas baseadas no powerups utilizado
@@ -245,9 +242,9 @@ def ShowQuestionVar(answers, how,ques):
     if(how == 'cin'):
         fiftyfifty(answers, correct)
     elif(how == 'plat'):
-        PlatCalculation(answers, correct, 0.3, 0.2, 10, how)
+        PlatCalculation(answers, correct,10, how, 0.3, 0.2)
     elif(how == 'uni'):
-        PlatCalculation(answers, correct, 0.5, -5, 5, how)
+        PlatCalculation(answers, correct, 5, how, 0.3, 0.2)
             
 
 
@@ -360,7 +357,6 @@ def GetAnswer(num, rounds):
             print("Input invalido")
 
     #print(1)
-
     
 #!Cria uma lista com n intens dentro
 ##Arg: n => tamanho da lista
@@ -379,18 +375,6 @@ def ShuffleArray(arr):
     shuffle(arr)
     return arr
  
-
-#Make a special question case
-#if num is divisible by 5
-def SpecialQuestion():
-    newArr = ShuffleArray()
-    oldArr = []
-    for i in range(0, len(newArr)):
-        if(newArr[i] % 5 == 0 and newArr[i] != 0):
-            oldArr.insert(i, newArr[i])
-    return oldArr
-
-
 #!Salva o score do player em um json
 def SaveResults():
     with open('data.json', 'w') as outfile:
@@ -428,4 +412,4 @@ def Main():
     SaveResults()
    
 
-#Main()
+Main()
