@@ -27,7 +27,7 @@ const Main = () => {
         <div className='bg-blue-200 my-1 py-3 mx-2 rounded-md'>
           <h1 className='font-bold text-xl mx-1'>Como jogar esse jogao?</h1>
           <div className='font-medium text-lg mx-1'>
-            Para jogar eh muito simples, basta baixar clickando aki <span className='text-xl text-rose-900'><a href='Le_Game.zip' download>Aki!</a></span> depois so unzipar o Le_Game.zip e por fim
+            Para jogar eh muito simples, basta baixar clickando <span className='text-xl text-rose-900'><a href='Le_Game.zip' download>Aki!</a></span> depois so unzipar o Le_Game.zip e por fim
             abrir o arquivo Le_Game.py e rodar
           </div>
         </div>

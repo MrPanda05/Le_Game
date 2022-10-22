@@ -7,7 +7,9 @@ const API = () => {
       <Helmet>
         <title>Manual do Codigo!</title>
       </Helmet>
-      API
+      <div className='flex justify-center my-3'>
+        <img src='/img/Le_GameFlowChart.png' alt='FlowChart'/>
+      </div>
     </div>
   )
 }
