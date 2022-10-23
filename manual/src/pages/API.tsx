@@ -5,7 +5,7 @@ const API = () => {
   return (
     <div>
       <Helmet>
-        <title>Manual do Codigo!</title>
+        <title>Manual do Código!</title>
       </Helmet>
       <div className='flex justify-center my-3'>
         <img src='/img/Le_GameFlowChart.png' alt='FlowChart'/>

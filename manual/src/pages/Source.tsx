@@ -4,10 +4,10 @@ const Source = () => {
   return (
     <div>
       <Helmet>
-        <title>Codigo fonte</title>
+        <title>Código fonte</title>
       </Helmet>
       <div className='text-center my-4'>
-        <h1 className='font-bold text-4xl'>O codigo fonte do jogao do bacalhau pode ser encontrado no Github!</h1>
+        <h1 className='font-bold text-4xl'>O código fonte do jogão do bacalhau pode ser encontrado no Github!</h1>
       </div>
       <div className="flex justify-center bg-sky-300 rounded-full py-5 my-5">
       <a href="https://github.com/MrPanda05/Le_Game" target="_blank" rel='noreferrer' className="text-gray-900 ">

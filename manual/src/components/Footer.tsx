@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="text-center lg:text-left bg-gray-200 text-gray-600">
   <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
     <div className="mr-12 hidden lg:block">
-      <span>Informacoes!</span>
+      <span>Informações!</span>
     </div>
     <div className="flex justify-center">
       <a href="https://github.com/MrPanda05/Le_Game" target="_blank" rel='noreferrer' className="text-gray-600">
@@ -40,7 +40,7 @@ const Footer = () => {
           Aviso
         </h6>
         <p className='font-semibold'>
-          A equipe do jogo do bacalhau nao eh responsavel por qualquer dano causado ao usar este produto
+          A equipe do jogão do bacalhau não é responsavel por qualquer dano moral ou emocional causado ao usar este produto!
         </p>
       </div>
       <div className="">
@@ -58,7 +58,7 @@ const Footer = () => {
   </div>
   <div className="text-center p-6 bg-gray-200">
     <span>© 2022 Copyright:</span>
-    <a className="text-gray-600 font-semibold" href="https://jogao-do-bacalhau.netlify.app/">Jogo do Bacalhau</a>
+    <a className="text-gray-600 font-semibold" href="https://jogao-do-bacalhau.netlify.app/">Jogão do Bacalhau</a>
   </div>
 </footer>
   )

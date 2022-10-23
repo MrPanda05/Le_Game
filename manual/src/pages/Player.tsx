@@ -18,7 +18,7 @@ const Player = () => {
           <div className='font-medium text-lg mx-1'>
             <ol className='list-decimal mx-8'>
               <li>
-              Baixe o Zip <span className='text-xl text-rose-900'><a href='Le_Game.zip' download>Aki!</a></span>
+              Baixe o Zip <span className='text-xl text-rose-900'><a href='Le_Game.zip' download>Aquii!</a></span>
               </li>
               <li>
               Unzipa
@@ -27,7 +27,7 @@ const Player = () => {
               Abra o arquivo Le_Game.py
               </li>
               <li>
-                Execute o arquivo
+              Execute o arquivo
               </li>
             </ol>
           </div>
@@ -37,20 +37,20 @@ const Player = () => {
           <div className='font-medium text-lg mx-1'>
             <ul className='list-disc mx-8'>
                 <li>
-                   Nesse jogo, vc deverar responder todas as perguntas, quanto mais acertos e quantos mais rodadas jogadas voce poderar
+                   Nesse jogão, você deverar responder todas as perguntas, quanto mais acertos e quantos mais rodadas jogadas você poderar
                    ganhar ou perder!!<br/>
                 </li>
                 <li>
-                  Voce deverar escolher entre as respostas <strong>A, B, C e D</strong><br/>
+                  Você deverar escolher entre as respostas <strong>A, B, C e D</strong><br/>
                 </li>
                 <li>
-                  Voce, tambem podera usar alguns tipos de power ups ou parar.<br/>
+                  Você, tambem podera usar alguns tipos de power ups ou parar.<br/>
                 </li>
                 <li>
-                  Para receber os power ups, basta digitar o comando no terminal, os commando estao na tabela abaixo<br/>
+                  Para receber os power ups, basta digitar o comando no terminal, os comandos estao na tabela abaixo<br/>
                 </li>
                 <li>
-                 Apos o termino do jogo, voce poderar joga-lo novamente apenas rodando o arquivo novamente!<br/>
+                 Após o termino do jogo, você poderar joga-lo novamente apenas rodando o arquivo novamente!<br/>
                 </li>
           </ul>
         </div>
@@ -65,7 +65,7 @@ const Player = () => {
   <thead>
     <tr className='mx-5 bg-slate-300'>
       <th className='border-2 border-slate-600'>Comando</th>
-      <th className='border-2 border-slate-600'>Descricao</th>
+      <th className='border-2 border-slate-600'>Descricão</th>
       <th className='border-2 border-slate-600'>Usos</th>
     </tr>
   </thead>
@@ -77,7 +77,7 @@ const Player = () => {
     </tr>
     <tr className='mx-5 bg-slate-300'>
       <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>Pular</td>
-      <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>Pula a questao atual</td>
+      <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>Pula a questão atual</td>
       <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>1</td>
     </tr>
     <tr className='mx-5'>
@@ -87,12 +87,12 @@ const Player = () => {
     </tr>
     <tr className='mx-5 bg-slate-300'>
       <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>Universitarios</td>
-      <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>Os universitarios escolheram algumas resposta</td>
+      <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>Os universitários escolheram algumas resposta</td>
       <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>2</td>
     </tr>
     <tr className='mx-5'>
       <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>Plateia</td>
-      <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>A plateia escolhera algumas respostas</td>
+      <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>A plateia escolherá algumas respostas</td>
       <td className='border-2 border-slate-700 pl-5 pr-5 font-semibold'>2</td>
     </tr>
   </tbody>
