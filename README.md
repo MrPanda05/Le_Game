@@ -1,7 +1,7 @@
-# Repo do Jogo Do Bacalhau
+# Repo do Jogão Do Bacalhau
 
 
-## [Site do Jogo do Bacalhau!!](https://jogao-do-bacalhau.netlify.app/)
+## [Site do Jogão do Bacalhau!!](https://jogao-do-bacalhau.netlify.app/)
 ## Manual da api esta em [Manual de Codigo/Api](https://jogao-do-bacalhau.netlify.app/manual-de-codigo) ou [Aqui](https://github.com/MrPanda05/Le_Game/blob/master/Api.md)
 
 
@@ -15,7 +15,7 @@
 3. Abra o Le_Game.py com alguma IDE
 4. Rode o arquivo!
 
-# Considerecoes!
+# Considereções!
 
 - O Jogo prescisa do arquivoquestions.json
 > La eh onde esta todas as perguntas e respostas
