@@ -117,8 +117,6 @@ def ShowQuestions(answers, rounds, ques):
         sleep(1)
         print('______________________________________________\n______________________________________________')
         num += 1
-
-
 ##['Sim', 'Nao', 'TOGURO?', 'Nao sei']
 
 #!Mostra 1 certa e outra errada
