@@ -49,7 +49,7 @@
         },
         {
             "id":4,
-            "name": "Na mitologia, Thor usa como arma um?",
+            "name": "Na mitologia nordica, Thor usa como arma um?",
             "correct": "martelo",
             "inco":
             [
@@ -151,7 +151,7 @@
             [
                 "Corno",
                 "Gado",
-                "Amar de mais a gasosa"
+                "Amar de mais"
             ]
 
         },
@@ -163,13 +163,13 @@
             [
                 "Bolinha de golf",
                 "Bolo de fuba",
-                "Banana"
+                "Cardernos de surfistas"
             ]
 
         },
         {
             "id":14,
-            "name": "O se deve dizer a alguem qua acabou de conhecer?",
+            "name": "O que se deve dizer a alguem que você de conhecer?",
             "correct": "Ola",
             "inco":
             [

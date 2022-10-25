@@ -32,21 +32,21 @@ const Main = () => {
           </div>
         </div>
         <div className='bg-blue-200 my-1 py-3 mx-2 rounded-md'>
-          <h1 className='font-bold text-xl mx-1'>Para quem eh esse jogao?</h1>
+          <h1 className='font-bold text-xl mx-1'>Para quem é esse jogao?</h1>
           <div className='font-medium text-lg mx-1'>
             O jogão do Bacalhau é livre para todos os publicos, qualquer pessoa que tenha um computador com python instalado será capaz
             de rodar esse belo jogão!
           </div>
         </div>
         <div className='bg-blue-200 my-1 py-3 mx-2 rounded-md'>
-          <h1 className='font-bold text-xl mx-1'>Porque Bacalhau?</h1>
+          <h1 className='font-bold text-xl mx-1'>Por que Bacalhau?</h1>
           <div className='font-medium text-lg mx-1'>
             Veja, se você esta com essa pergunta, significa que você não é culto o suficiente para simplismente entender a razão por trás do bacalhau, somente 
             quem sabe... sabe!
           </div>
         </div>
         <div className='bg-blue-200 my-1 py-3 mx-2 rounded-md'>
-          <h1 className='font-bold text-xl mx-1'>Instalei e rodei, mas nao funcionou | Exemplo 1:</h1>
+          <h1 className='font-bold text-xl mx-1'>Instalei e rodei, mas não funcionou | Exemplo 1:</h1>
           <div className='font-medium text-lg mx-1'>
             Certifique-se que o seu terminal esta na pasta certa, se vc unzipou e criou uma pasta no processo, irá estar mais ou menos assim.
             Por exemplo: "C:\User\Nome\Desktop\Le_Game" nesse caso. <br/>
@@ -61,13 +61,13 @@ const Main = () => {
           </div>
         </div>
         <div className='bg-blue-200 my-1 py-3 mx-2 rounded-md'>
-          <h1 className='font-bold text-xl mx-1'>Instalei e rodei, mas nao funcionou | Exemplo 3:</h1>
+          <h1 className='font-bold text-xl mx-1'>Instalei e rodei, mas não funcionou | Exemplo 3:</h1>
           <div className='font-medium text-lg mx-1'>
             Certifique-se que voce tenha python instalado.
           </div>
         </div>
         <div className='bg-blue-200 my-1 py-3 mx-2 rounded-md'>
-          <h1 className='font-bold text-xl mx-1'>Instalei e rodei, mas nao funcionou | Exemplo 4:</h1>
+          <h1 className='font-bold text-xl mx-1'>Instalei e rodei, mas não funcionou | Exemplo 4:</h1>
           <div className='font-medium text-lg mx-1'>
             Caso você tenha tentado tudo e não funcionou, isso significa que tu não é merecedor de experienciar tais jogos como esse!
           </div>

@@ -29,6 +29,9 @@ const Player = () => {
               <li>
               Execute o arquivo
               </li>
+              <li>
+                Baixe o manual em pdf <span className='text-xl text-rose-900'><a href='Jogador.pdf' download>Aquii!</a></span>
+              </li>
             </ol>
           </div>
     </div>
