@@ -18,7 +18,7 @@ const Main = () => {
           </h1>
         </div>
         <div className='bg-blue-200 my-1 py-3 mx-2 rounded-md'>
-          <h1 className='font-bold text-xl mx-1'>O que eh o jogao do bacalhau?</h1>
+          <h1 className='font-bold text-xl mx-1'>O que é o jogao do bacalhau?</h1>
           <div className='font-medium text-lg mx-1'>
             O jogão do bacalhau, ou para os menos cultos entre nos, apenas jogo do bacalhau, é um jogo de perguntas e respostas
             onde o seu objetivo é conseguir o maior número de pontos possível.
@@ -27,8 +27,8 @@ const Main = () => {
         <div className='bg-blue-200 my-1 py-3 mx-2 rounded-md'>
           <h1 className='font-bold text-xl mx-1'>Como jogar esse jogão?</h1>
           <div className='font-medium text-lg mx-1'>
-            Para jogar é muito simples, basta baixar clickando <span className='text-xl text-rose-900'><a href='Le_Game.zip' download>Aqui!</a></span> depois so unzipar o Le_Game.zip e por fim
-            abrir o arquivo Le_Game.py e rodar.
+            Para jogar é muito simples, basta baixar clickando <span className='text-xl text-rose-900'><a href='Le_Game.zip' download>Aqui!</a></span> depois so unzipar o Le_Game.zip e abrir o IDE na
+            pasta Jogao-Do-Bacalhau e nessa mesma pasta, abrir o arquivo Le_Game.py e execula-lo
           </div>
         </div>
         <div className='bg-blue-200 my-1 py-3 mx-2 rounded-md'>
@@ -49,7 +49,8 @@ const Main = () => {
           <h1 className='font-bold text-xl mx-1'>Instalei e rodei, mas não funcionou | Exemplo 1:</h1>
           <div className='font-medium text-lg mx-1'>
             Certifique-se que o seu terminal esta na pasta certa, se vc unzipou e criou uma pasta no processo, irá estar mais ou menos assim.
-            Por exemplo: "C:\User\Nome\Desktop\Le_Game" nesse caso. <br/>
+            Por exemplo 1 se você criou uma pasta no proscesso: "C:\User\Nome\Desktop\Le_Game\Jogao-Do-Bacalhau" nesse caso. <br/>
+            Por exemplo 2 se você não criou uma pasta no proscesso: "C:\User\Nome\Desktop\Jogao-Do-Bacalhau" nesse caso. <br/>
             Use cd nomeDaPasta para avancar em uma pasta com o terminal. <br/>
             Use cd .. Para voltar uma pasta. <br/>
           </div>

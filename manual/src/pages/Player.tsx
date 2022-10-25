@@ -24,6 +24,9 @@ const Player = () => {
               Unzipa
               </li>
               <li>
+              Abra o seu IDE na pasta Jogao-Do-Bacalhau
+              </li>
+              <li>
               Abra o arquivo Le_Game.py
               </li>
               <li>

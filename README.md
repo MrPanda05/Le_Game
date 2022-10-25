@@ -18,11 +18,11 @@
 # Considereções!
 
 - O Jogo prescisa do arquivoquestions.json
-> La eh onde esta todas as perguntas e respostas
+> La é onde esta todas as perguntas e respostas
 > Caso voce queira fazer suas propias perguntas ou...~~[chetar](https://youtu.be/76hji9gdvOE)~~
 - Quem eu to querendo enganar, claro que o jogador deste jogo eh 100% honesto e nao roubaria como alguem chamado **[Serie Sul Coreana]** afinal ***[Explicacao removida pelo Trimestral Superador Elemental]***
 
-# Manual para criacoes de perguntas
+# Manual para criações de perguntas
 
 - Use esse template a cada nova pergunta
 
